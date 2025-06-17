@@ -1,1 +1,0 @@
-mklink "PythonAssistant" "C:\Windows\System32\RKAT_Base64.pyw"
